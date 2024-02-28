@@ -1,0 +1,73 @@
+.card{
+    filter : drop-shadow(1px 1px 6px rgba(124, 124, 124, 0.3));
+    border-radius: 10px;
+    border: none;
+}
+
+.card-img{
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+    transform: scale(0.8);
+    height: fit-content;
+}
+.card-img:hover{
+    transform: scale(0.9);
+}
+
+.card-body{
+    padding-top: 0;
+}
+.card-title{
+    color: black;
+    font-weight: bold;
+}
+
+.card-text{
+    color:  #FAA300;
+    font-weight: bold;
+    font-size: 90%;
+}
+
+.add-cart-button:hover{
+    color: #FAA300;
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid #FAA300 ;
+}
+
+.add-cart-button{
+    color: white;
+    font-weight: bold;
+    background-color: #FAA300;
+    border: 1px solid #FAA300 ;
+}
+.in-cart-button:hover{
+    color: rgb(7, 150, 7);
+    font-weight: bold;
+    background-color: white;
+    border: 1px solid green ;
+}
+
+.in-cart-button{
+    color: white;
+    font-weight: bold;
+    background-color: green;
+    border: 1px solid green ;
+}
+
+
+
+.wishlist-logo{
+    z-index: 1;
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 2rem;
+    right: 1.6rem;
+    font-size: medium;
+    padding: 3px;
+}
+
+
+.wishlist-logo:hover{
+    transform: scale(1.3);
+}

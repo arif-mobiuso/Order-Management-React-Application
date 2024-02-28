@@ -1,0 +1,40 @@
+
+
+
+
+async function print(){
+    await new Promise(resolve =>{
+        setTimeout(()=>{
+            console.log("hello");
+            resolve();
+        }, 1000);
+    })
+    console.log("world");
+}
+
+
+
+const event  = new Promise((resolve , reject)=>{
+    let x ;
+    if (x = 10){
+        resolve(x);
+    } 
+    else{
+        reject("x is not 10")
+    }
+})
+
+
+event.then((x)=>{
+    console.log(x);
+})
+.catch((err)=>{
+    console.log(err);
+})
+.finally(()=>{
+    console.log("promise completed");
+})
+
+print();
+
+

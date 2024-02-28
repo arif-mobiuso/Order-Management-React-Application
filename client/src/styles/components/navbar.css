@@ -1,0 +1,31 @@
+.navbar{
+    background-color: #FAA300;
+}
+
+/* styles.css */
+.cart-container {
+    position: relative;
+    display: inline-block;
+    padding: 0.5rem;
+    margin-right: 2rem;
+}
+
+.cart-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-color: #000; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FAA300; 
+    font-weight: bold;
+}
+
+.cart-logo{
+    color: #000;
+}
+
