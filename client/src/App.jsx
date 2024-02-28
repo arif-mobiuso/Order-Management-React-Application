@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
-import Profile from './pages/Profile';
+import Profile from './components/AccountInfo/Profile';
 import Login from './components/Authentication/Login';
 import Register from "./components/Authentication/Register";
 import Payment from './pages/Payment';
@@ -27,12 +27,9 @@ const App = () => {
             <Route path='/products' element={<Products />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/profile' element={<Profile />} />
             <Route path='/register' element={<Register />} />
             <Route path='/payment' element={<Payment />} />
-            <Route path='/account' element={<AccountDetails />} />
-            <Route path="/account/orders" element={<Orders />} />
-            <Route path="/account/wishlist" element={<Wishlist />} />
+            <Route path='/account/*' element={<AccountDetails />} />
           </Routes>
         </div>
         <Footer />
