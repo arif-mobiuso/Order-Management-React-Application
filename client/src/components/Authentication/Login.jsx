@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { ToastContainer, toast } from "react-toastify";
-import { login } from "../../assets/API/index";
+import { getCustomerDetails, login } from "../../assets/API/index";
 import { useDispatch } from 'react-redux';
-import { loginSuccess } from '../../features/user/userSlice';
+import { addUserDetails, loginSuccess } from '../../features/user/userSlice';
 import { IoIosEyeOff, FaFacebook, FaGoogle, FaTwitter, FaGithub, FaRegEye } from "../../assets/icons/index";
 
 
@@ -48,6 +48,8 @@ const Login = () => {
                 })    
             
             dispatch(loginSuccess({ data: response }));
+            const result = await getCustomerDetails(response.customerId);
+            dispatch(addUserDetails({user : result.result}))
             navigate("/");
         }
         else if (response.statusCode === 401) {

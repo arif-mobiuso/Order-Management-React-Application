@@ -3,9 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 let initialState = {
     isAuthenticated: false,
     cartItems: [],
-    user: {
+    userDetails: {
         userId: null,
-
     },
     token: "",
     orders: [],
@@ -20,12 +19,11 @@ const userSlice = createSlice({
         loginSuccess(state, action) {
             state.token = action.payload.data.token;
             state.isAuthenticated = true;
-            state.user.userId = action.payload.data.customerId;
         },
         logoutSuccess(state) {
             state.token = "";
             state.isAuthenticated = false;
-            state.user.userId = null;
+            state.userDetails = [];
         },
         wishlist(state, action) {
             const newItem = action.payload;
@@ -35,29 +33,10 @@ const userSlice = createSlice({
             const id = action.payload.id;
             state.wishlistItems = state.wishlistItems.filter((item) => item.id !== id);
         },
-        addToCart: (state, action) => {
-            const newItem = action.payload;
-            state.cartItems.push(newItem);
-        },
-        deleteFromCart: (state, action) => {
-            const id = action.payload.id;
-            state.cartItems = state.cartItems.filter((item) => item.id !== id);
-        },
-        clearCart: (state) => {
-            state.cartItems = [];
-        },
-        increaseQuantity: (state, action) => {
-            const item = state.cartItems.find(item => item.id === action.payload.id);
-            if (item) {
-                item.quantity++;
-            }
-        },
-        decreaseQuantity: (state, action) => {
-            const item = state.cartItems.find(item => item.id === action.payload.id);
-            if (item && item.quantity > 1) {
-                item.quantity--;
-            }
+        addUserDetails: (state, action) => {
+            state.userDetails = action.payload.user;
         }
+
     }
 })
 
@@ -73,11 +52,7 @@ export const { loginSuccess,
     logoutSuccess,
     wishlist,
     deleteWishlist, 
-    addToCart, 
-    deleteFromCart,
-    clearCart,
-    increaseQuantity,
-    decreaseQuantity
+    addUserDetails,
 } = userSlice.actions
 
 

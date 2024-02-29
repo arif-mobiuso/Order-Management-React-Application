@@ -85,3 +85,15 @@ export const placeOrder = async (orderInfo , userId) => {
         return error
     }
 }
+
+
+export const getCustomerDetails = async (customerId) => {
+    try {
+        const result = await axios.get(`${API_URL}/customers/${customerId}`);
+        return result.data;
+    }
+    catch (error) {
+        return error
+    }
+}
+
