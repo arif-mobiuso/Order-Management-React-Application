@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Card from "../components/Card"
 import { getAllProducts, getProductsByCategory, getCategories } from "../assets/API";
 import "../styles/pages/products.css";
-import { Audio, ThreeDots, RevolvingDot } from 'react-loader-spinner'
+import { ThreeDots} from 'react-loader-spinner'
 import { product3 } from '../assets/images';
 
 const Products = () => {

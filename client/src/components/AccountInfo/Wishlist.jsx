@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "../AccountInfo/styles/wishlist.css";
 import WishlistCard from './WishlistCard';
 import { useSelector } from 'react-redux';

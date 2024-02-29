@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { logoutSuccess } from '../features/user/userSlice'
-import { addItemsToCart } from '../features/user/userSlice'
 import "../styles/components/navbar.css";
 import { FaCartShopping } from "../assets/icons";
 const Navbar = () => {
@@ -11,7 +10,7 @@ const Navbar = () => {
     const items = useSelector((state) => state.cart.items);
     const dispatch = useDispatch();
     const handleLogout = () => {
-        const response = dispatch(logoutSuccess());
+        dispatch(logoutSuccess());
     }
     const handleMyCart = () => {
         console.log(items);

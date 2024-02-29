@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import { FaFacebook, FaGoogle, FaTwitter, FaGithub } from "react-icons/fa";
 
 import { City, State, Country } from "country-state-city";
@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { registerUser } from "../../assets/API/index.js";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 
@@ -59,7 +59,6 @@ const Register = () => {
     return (
 
         <div className='container d-flex justify-content-center mt-4 ' >
-            <h1></h1>
             <div className="tab-content w-75">
                 <div className="tab-content " id="pills-register" role="tabpanel" aria-labelledby="tab-register">
                     <form onSubmit={handleSubmit(onSubmit)}>
@@ -259,7 +258,7 @@ const Register = () => {
                     </form>
                 </div>
                 <div className="text-center">
-                <p>Already  a member? <a className='link' onClick={() => navigate("/login")}>Login</a></p>
+                <p>Already  a member? <Link className='link' onClick={() => navigate("/login")}>Login</Link></p>
             </div>
             </div>
             

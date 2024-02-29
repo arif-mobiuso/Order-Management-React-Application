@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { ToastContainer, toast } from "react-toastify";
 import { login } from "../../assets/API/index";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { loginSuccess } from '../../features/user/userSlice';
 import { IoIosEyeOff, FaFacebook, FaGoogle, FaTwitter, FaGithub, FaRegEye } from "../../assets/icons/index";
 

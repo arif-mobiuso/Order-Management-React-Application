@@ -5,14 +5,11 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Products from './pages/Products';
 import Cart from './pages/Cart';
-import Profile from './components/AccountInfo/Profile';
 import Login from './components/Authentication/Login';
 import Register from "./components/Authentication/Register";
 import Payment from './pages/Payment';
 import AccountDetails from './pages/AccountDetails';
 
-import Orders from './components/AccountInfo/Orders';
-import Wishlist from './components/AccountInfo/Wishlist';
 
 const App = () => {
   return (
