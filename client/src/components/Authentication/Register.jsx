@@ -264,13 +264,6 @@ const Register = () => {
             
         </div>
 
-        // <div className="form" onSubmit={handleSubmit(onSubmit)}>
-        //     <form >
-        //         <input {...register("fisrtName")} type="email" id='one' />
-        //         <label htmlFor="one"></label>
-        //         <button type='submit'>register</button>
-        //     </form>
-        // </div>
     )
 }
 

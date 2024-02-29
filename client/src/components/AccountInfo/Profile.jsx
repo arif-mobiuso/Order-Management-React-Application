@@ -9,25 +9,11 @@ const Profile = () => {
 
     <>
 
-      <div className='container ' id='profile-section'>
+      <div className='container fit-content overflow-auto ' id='profile-section'>
         <h1>My details</h1>
-        <p>
-          token value is  : {userDetails.token}
-        </p>
+
         <li>{userDetails.user.userId}</li>
       </div>
-      <div>
-        <p>
-          { 
-            userDetails.wishlistItems.map((item) => {
-              return (
-                <li>{ item.name}</li>
-              );
-            })
-          }
-        </p>
-      </div>
-
     </>
 
 

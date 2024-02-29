@@ -50,12 +50,20 @@ export const transformCustomerDetails = (customer) => {
     lastName: customer.CUSTOMER_LNAME,
     email: customer.CUSTOMER_EMAIL,
     phone: customer.CUSTOMER_PHONE,
-    addressId: customer.ADDRESS_ID,
     creationDate: customer.CUSTOMER_CREATION_DATE,
     username: customer.CUSTOMER_USERNAME,
-    gender: customer.CUSTOMER_GENDER
+    gender: customer.CUSTOMER_GENDER,
+    address: {
+      addressLine1 : customer.ADDRESS_LINE1 , 
+      addressLine2 : customer.ADDRESS_LINE2 , 
+      city: customer.CITY, 
+      state: customer.STATE, 
+      pincode: customer.PINCODE, 
+      country : customer.COUNTRY
+    }
   };
 };
+
 
 export const transformProductDetails = (product) => {
   return {

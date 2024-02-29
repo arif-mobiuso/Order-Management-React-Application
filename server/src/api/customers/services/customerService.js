@@ -61,7 +61,7 @@ export const getCustomerDetails = () => {
 export const getCustomerById = (customerId) => {
     return new Promise((resolve, reject) => {
         try {
-            const fetchCustomerByIdQuery = `select * from online_customer where customer_id = ${customerId}`;
+            const fetchCustomerByIdQuery = `select * from online_customer join address on address.address_id = online_customer.ADDRESS_ID where CUSTOMER_ID =  ${customerId}`;
             db.query(fetchCustomerByIdQuery, function (error, result) {
                 if (error) {
                     return reject({ message: error.message });
