@@ -21,7 +21,7 @@ const Card = (props) => {
 
     const handleAddToCart = () => {
         if (user.isAuthenticated) {
-            dispatch(addItem({ name: props.desc, category: props.category, price: props.price, id: props.id, quantity: 1 }));
+            dispatch(addItem({ name: props.desc, img : props.img , category: props.category, price: props.price, id: props.id, quantity: 1 }));
         }
         else {
             toast.warning('please login first', {
@@ -35,7 +35,7 @@ const Card = (props) => {
             dispatch(deleteWishlist({ id: props.id }));
 
         } else {
-            dispatch(wishlist({ name: props.desc, category: props.category, price: props.price, id: props.id }));
+            dispatch(wishlist({ name: props.desc, img : props.img, category: props.category, price: props.price, id: props.id }));
         }
     };
 

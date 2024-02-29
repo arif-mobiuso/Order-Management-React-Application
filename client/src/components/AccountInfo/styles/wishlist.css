@@ -1,0 +1,12 @@
+#wishlist-card::-webkit-scrollbar {
+    display: none;
+  }
+
+
+#wishlist-card {
+    padding: 0.5rem;
+    max-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  

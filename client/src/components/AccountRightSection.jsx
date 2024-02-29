@@ -7,8 +7,7 @@ import Profile from './AccountInfo/Profile';
 
 const AccountRightSection = () => {
   return (
-    <div className="bg-dark text-white min-vh-100">
-      <h1>Right</h1>
+    <div className="min-vh-100">
       <Routes>
         <Route path="/orders" element={<Orders />} />
         <Route path="/wishlist" element={<Wishlist />} />

@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 
 const AccountLeftSection = () => {
     return (
-        <div className="bg-warning text-white min-vh-100">
+        <div className=" min-vh-100">
             <div className="h-100 d-flex flex-column bg-lightOverlay backdrop-blur-md shadow-md gap-3">
-                <Link to="/account" className="py-4 bg-dark text-decoration-none text-center">
+                <Link to="/account" className="py-4  text-decoration-none text-center">
                     OMS
                 </Link>
                 <Link to="/account/profile" className="text-decoration-none text-center">
