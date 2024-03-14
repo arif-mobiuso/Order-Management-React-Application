@@ -21,8 +21,10 @@ const Wishlist = () => {
             <WishlistCard
               name={item.name}
               key={item.id}
+              id={ item.id}
               price={item.price}
               category={item.category}
+              img={item.img}
             />)})
       }
     </div>

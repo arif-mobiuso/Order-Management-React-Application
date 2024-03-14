@@ -36,7 +36,6 @@ const userSlice = createSlice({
         addUserDetails: (state, action) => {
             state.userDetails = action.payload.user;
         }
-
     }
 })
 

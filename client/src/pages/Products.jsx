@@ -14,8 +14,8 @@ const Products = () => {
 
     const fetchCategories = async () => {
         const data = await getCategories();
-        const xyz = ["All", ...data]
-        setCatOptions(xyz);
+        const allCategories = ["All", ...data]
+        setCatOptions(allCategories);
     }
 
 

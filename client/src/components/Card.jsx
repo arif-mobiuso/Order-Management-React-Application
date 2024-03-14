@@ -6,6 +6,7 @@ import { FaHeart, FaRegHeart } from "../assets/icons/index";
 import { wishlist, deleteWishlist } from '../features/user/userSlice';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {useNavigate} from "react-router-dom";
 
 const Card = (props) => {
 
@@ -16,7 +17,7 @@ const Card = (props) => {
     const wishlistItems = useSelector((state) => state.user.wishlistItems);
     const isInCart = items.some(item => item.id === props.id);
     const wishlisted = wishlistItems.some(wishlistItems => wishlistItems.id === props.id);
-    
+    const navigate = useNavigate();
 
 
     const handleAddToCart = () => {
@@ -55,8 +56,8 @@ const Card = (props) => {
                     <div className="d-flex justify-content-between align-items-center mt-auto">
                         <p className="card-text flex-grow-1 pt-3">₹ {props.price}.00</p>
                         {user.isAuthenticated && isInCart ? (
-                            <button className="btn btn-sm in-cart-button flex-grow-1" disabled>
-                                In cart
+                            <button onClick={()=> navigate('/cart')} className="btn btn-sm in-cart-button flex-grow-1" >
+                                Go to cart
                             </button>
                         ) : (
                             <>

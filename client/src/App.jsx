@@ -9,6 +9,7 @@ import Login from './components/Authentication/Login';
 import Register from "./components/Authentication/Register";
 import Payment from './pages/Payment';
 import AccountDetails from './pages/AccountDetails';
+import { ToastContainer } from 'react-toastify';
 
 
 const App = () => {
@@ -31,6 +32,7 @@ const App = () => {
         </div>
         <Footer />
       </Router>
+    <ToastContainer/>
     </div>
   )
 }
