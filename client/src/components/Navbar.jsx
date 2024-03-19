@@ -13,7 +13,6 @@ const Navbar = () => {
         dispatch(logoutSuccess());
     }
     const handleMyCart = () => {
-        console.log(items);
         // dispatch(addItemsToCart({ items: items })); 
         navigate("/cart");
     }

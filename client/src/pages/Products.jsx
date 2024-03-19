@@ -35,7 +35,6 @@ const Products = () => {
 
 
     useEffect(() => {
-        console.log(category);
         fetchProducts();
     }, [])
 
