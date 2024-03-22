@@ -99,3 +99,13 @@ export const updateCustomerById = async (req, res) => {
  }
  
 
+ export const getAllOrdersById = async (req, res) => {
+     try {
+         const customerId = req.params.id ; 
+          const orders = await customerService.getAllOrders(customerId);
+ 
+         return res.status(200).send({ result : orders.result })
+     } catch (error) {
+          return res.status(500).send({ message: "Internal Server Error 89" });
+     }
+ }

@@ -11,6 +11,8 @@ import placeOrderSchema from "../../validations/placeOrderValidation.js";
 // get 
 router.get('/' , customerController.getAllCustomers) ; 
 router.get('/:id' , customerController.getCustomerDetailsById) ; 
+router.get('/:id/orders',customerController.getAllOrdersById ) ;
+
 
 // post
 router.post('/'  , validation(customerSchema)  ,  customerController.addNewCustomer) ; 

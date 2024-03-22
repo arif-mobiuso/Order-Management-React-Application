@@ -89,7 +89,7 @@ export const deleteCustomerById = (customerId) => {
                     return reject({ message: error.message });
 
                 }
-                await userServices.deleteUser(customerId) ;
+                await userServices.deleteUser(customerId);
                 return resolve({
                     message: `Sucessfully deleted  Customer  with customerId ${customerId} ! `,
                     result: result
@@ -150,3 +150,44 @@ export const updateCustomer = (customerId, customerDetails) => {
         }
     });
 };
+
+
+export const getAllOrders = (customerId) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const allOrdersQuery = `select * from order_header 
+            left join order_items on order_header.order_id  = order_items.ORDER_ID
+            where order_header.CUSTOMER_ID = ${customerId} ;`;
+
+
+            db.query(allOrdersQuery, (error, result) => {
+                if (error) {
+                    console.log(error);
+                    return reject({ message: "Error in Query!" });
+                }
+                const orders = {};
+                result.forEach(item => {
+                    const orderId = item.ORDER_ID;
+                    if (!orders[orderId]) {
+                        orders[orderId] = {
+                            orderDate: item.ORDER_DATE,
+                            orderStatus: item.ORDER_STATUS,
+                            paymentMode: item.PAYMENT_MODE,
+                            paymentDate: item.PAYMENT_DATE,
+                            products: []
+                        };
+                    }
+                    orders[orderId].products.push({
+                        id: item.PRODUCT_ID,
+                        quantity: item.PRODUCT_QUANTITY
+                    });
+                    console.log(orders);
+                    return resolve({ result: orders });
+                });
+            })
+
+        } catch (error) {
+            return reject({ error: "Internal Server Error!" });
+        }
+    });
+}

@@ -4,8 +4,14 @@ import { getAllProducts, getProductsByCategory, getCategories } from "../assets/
 import "../styles/pages/products.css";
 import { ThreeDots} from 'react-loader-spinner'
 import { product3 } from '../assets/images';
+import { addProducts } from '../features/products/productSlice';
+import { useDispatch, useSelector } from 'react-redux';
+
+
 
 const Products = () => {
+    const dispatch = useDispatch();
+    const products = useSelector((state) => state.product);
 
     const [items, setItems] = useState([]);
     const [category, setcategory] = useState();
@@ -25,6 +31,7 @@ const Products = () => {
         let data;
         if (category === "All") {
             data = await getAllProducts();
+            dispatch(addProducts({products  : data}))
         } else {
             data = await getProductsByCategory(category);
         }
